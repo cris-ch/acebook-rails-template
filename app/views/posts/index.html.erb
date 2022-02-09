@@ -1,7 +1,11 @@
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+  <p><%= truncate(post.message, :length => 35) %></p>
+  <br>
+  <%= link_to "Read post", post %>
 <% end %>
 
+<br>
+<br>
 <%= link_to new_post_path do %>
   New post
 <% end %>
